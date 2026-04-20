@@ -15,6 +15,157 @@
   .lang-btn.active { background-color: #4f46e5; color: white; }
   .step-num { display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem; background-color: #4f46e5; color: white; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-right: 0.5rem; flex-shrink: 0; }
   .flow-num { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background-color: #10b981; color: white; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; margin-right: 0.75rem; flex-shrink: 0; }
+
+  /* ========== Mobile chip nav ========== */
+  .mobile-chip-nav {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border-top: 1px solid #e5e7eb;
+    background: white;
+    scrollbar-width: none;
+  }
+  .mobile-chip-nav::-webkit-scrollbar { display: none; }
+  .chip {
+    flex-shrink: 0;
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    background: white;
+    cursor: pointer;
+  }
+  .chip-ref {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    color: #78350f;
+  }
+  .chip-divider {
+    flex-shrink: 0;
+    width: 1px;
+    background: #d1d5db;
+    margin: 0 0.25rem;
+  }
+  .more-btn { display: none; }
+
+  /* ========== Mobile carousel (≤767px) ========== */
+  @media (max-width: 767px) {
+    .ideas-grid,
+    .refs-grid {
+      display: flex !important;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      gap: 0.75rem !important;
+      padding: 0 1rem 0.5rem !important;
+      scroll-padding-left: 1rem;
+    }
+    .ideas-grid > article,
+    .refs-grid > article {
+      flex: 0 0 90%;
+      scroll-snap-align: start;
+      width: 90%;
+      max-width: 90%;
+      min-width: 90%;
+      order: 0 !important; /* neutralize desktop order-N so chip labels match visual order */
+    }
+    /* Hide TikTok embed on mobile (keep URL link clickable) */
+    .tiktok-embed { display: none !important; }
+
+    /* Card body truncation */
+    .card-truncate {
+      max-height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-truncate::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 70px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+      pointer-events: none;
+    }
+    /* "More" button */
+    .more-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.875rem;
+      color: #4f46e5;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      background: white;
+      cursor: pointer;
+    }
+    .more-btn:active { background: #f9fafb; }
+  }
+  @media (min-width: 768px) {
+    .mobile-chip-nav { display: none; }
+  }
+
+  /* ========== Modal (bottom sheet) ========== */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-sheet {
+    background: white;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    border-radius: 16px 16px 0 0;
+    overflow-y: auto;
+    animation: slideUp 0.25s ease;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  .modal-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10;
+  }
+  .modal-close {
+    background: #f3f4f6;
+    border: none;
+    border-radius: 9999px;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .modal-sheet article {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .modal-sheet .card-truncate {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .modal-sheet .card-truncate::after { display: none !important; }
+  .modal-sheet .more-btn { display: none !important; }
 </style>
 </head>
 <body class="lang-en bg-gray-50 text-gray-900">
@@ -40,6 +191,21 @@
       <button onclick="setLang('es')" id="btn-es" class="lang-btn px-3 py-1.5 rounded text-sm font-medium border border-gray-300">🇪🇸 ES</button>
     </div>
   </div>
+  <nav class="mobile-chip-nav">
+    <button onclick="jumpTo('idea-1')" class="chip">1</button>
+    <button onclick="jumpTo('idea-2')" class="chip">2</button>
+    <button onclick="jumpTo('idea-3')" class="chip">3</button>
+    <button onclick="jumpTo('idea-4')" class="chip">4</button>
+    <button onclick="jumpTo('idea-5')" class="chip">5</button>
+    <button onclick="jumpTo('idea-6')" class="chip">6</button>
+    <button onclick="jumpTo('idea-7')" class="chip">7</button>
+    <button onclick="jumpTo('idea-8')" class="chip">8</button>
+    <span class="chip-divider"></span>
+    <button onclick="jumpTo('ref-1')" class="chip chip-ref">R1</button>
+    <button onclick="jumpTo('ref-2')" class="chip chip-ref">R2</button>
+    <button onclick="jumpTo('ref-3')" class="chip chip-ref">R3</button>
+    <button onclick="jumpTo('ref-4')" class="chip chip-ref">R4</button>
+  </nav>
 </header>
 
 <!-- MAIN -->
@@ -193,7 +359,7 @@
     <span class="en">📹 Video Ideas (8 options)</span>
     <span class="es">📹 Ideas de Video (8 opciones)</span>
   </h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="ideas-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
   <!-- ============ IDEA 1 ============ -->
   <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-1">
@@ -707,7 +873,7 @@
     <span class="en">Reference examples by technique. Borrow anything that fits your style.</span>
     <span class="es">Ejemplos de referencia por tecnica. Toma lo que encaje con tu estilo.</span>
   </p>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="refs-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <!-- ============ REF 1: Strong Hook ============ -->
     <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
@@ -825,6 +991,16 @@
 
 </main>
 
+<!-- ============ MODAL (mobile "read more" bottom sheet) ============ -->
+<div id="card-modal" class="modal-backdrop" onclick="if(event.target===this) closeCardModal()">
+  <div class="modal-sheet">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeCardModal()" aria-label="Close">✕</button>
+    </div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
 <script>
   function setLang(lang) {
     document.body.className = 'lang-' + lang + ' bg-gray-50 text-gray-900';
@@ -836,6 +1012,54 @@
     const saved = localStorage.getItem('lyra_lang');
     if (saved && ['ja','en','es'].includes(saved)) setLang(saved);
   } catch(e){}
+
+  // ========== Mobile: assign IDs, add "more" button, truncate ==========
+  // Filter .hidden articles so chip numbering matches what's actually visible.
+  document.querySelectorAll('.ideas-grid > article:not(.hidden)').forEach((a, i) => {
+    if (!a.id) a.id = 'idea-' + (i + 1);
+  });
+  document.querySelectorAll('.refs-grid > article:not(.hidden)').forEach((a, i) => {
+    if (!a.id) a.id = 'ref-' + (i + 1);
+  });
+  document.querySelectorAll('.ideas-grid > article:not(.hidden), .refs-grid > article:not(.hidden)').forEach(article => {
+    // Mark the text body section(s) as truncatable (CSS applies only on mobile)
+    article.querySelectorAll('.p-4.border-t').forEach(d => d.classList.add('card-truncate'));
+    // Append "more" button (CSS hides it on desktop)
+    const btn = document.createElement('button');
+    btn.className = 'more-btn';
+    btn.innerHTML = '<span class="en">... Read full details</span><span class="ja">... 全部見る</span><span class="es">... Ver todo</span>';
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openCardModal(this);
+    });
+    article.appendChild(btn);
+  });
+
+  function openCardModal(btnEl) {
+    const article = btnEl.closest('article');
+    const clone = article.cloneNode(true);
+    // Strip elements we don't want in the modal
+    clone.querySelectorAll('.more-btn, .tiktok-embed, iframe').forEach(el => el.remove());
+    clone.querySelectorAll('.card-truncate').forEach(el => el.classList.remove('card-truncate'));
+    const content = document.getElementById('modal-content');
+    content.innerHTML = '';
+    content.appendChild(clone);
+    document.getElementById('card-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCardModal() {
+    document.getElementById('card-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function jumpTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'start' });
+  }
+  // ESC closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCardModal();
+  });
 </script>
 </body>
 </html>
