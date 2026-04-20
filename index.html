@@ -74,6 +74,11 @@
       max-width: 90%;
       min-width: 90%;
     }
+    /* Shrink TikTok embeds on mobile to reduce vertical space */
+    .tiktok-embed {
+      zoom: 0.6;
+      min-height: 350px !important;
+    }
     /* Card body truncation */
     .card-truncate {
       max-height: 240px;
@@ -343,7 +348,7 @@
   <div class="ideas-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
   <!-- ============ IDEA 1 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-1">
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
     <div class="bg-indigo-600 text-white p-3">
       <h2 class="text-lg font-bold">
         <span class="ja">アイデア 1: 60秒のアプリ体験ストーリー</span>
@@ -429,7 +434,7 @@
   </article>
 
   <!-- ============ IDEA 2 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-2">
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
     <div class="bg-indigo-600 text-white p-3">
       <h2 class="text-lg font-bold">
         <span class="ja">アイデア 2: 120 秒の長めのアドバイス</span>
@@ -529,8 +534,52 @@
     </div>
   </article>
 
+  <!-- ============ IDEA 8 ============ -->
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+    <div class="bg-purple-600 text-white p-3">
+      <h2 class="text-lg font-bold">
+        <span class="ja">アイデア 3: 相性診断カード リアクション</span>
+        <span class="en">Idea 3: Compatibility Match card reaction</span>
+        <span class="es">Idea 3: Reaccion a tarjetas de compatibilidad</span>
+      </h2>
+    </div>
+    <div class="p-4">
+      <a href="https://www.tiktok.com/@app.stars.align/video/7582873314817756429" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@app.stars.align/video/7582873314817756429</a>
+      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@app.stars.align/video/7582873314817756429" data-video-id="7582873314817756429" style="max-width:605px;min-width:280px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@app.stars.align/video/7582873314817756429">View on TikTok</a></section>
+      </blockquote>
+    </div>
+    <div class="p-4 border-t border-gray-200 flex-1">
+      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
+        <span class="ja">タイムライン (約 30 秒)</span><span class="en">Timeline (~30 sec)</span><span class="es">Cronologia (~30 seg)</span>
+      </h3>
+      <ul class="space-y-1.5 text-sm mb-4">
+        <li><span class="ja"><b>0-3 秒</b>: 問いかけフック (例: "How do I feel about these zodiac couples? No words.")</span><span class="en"><b>0-3 sec</b>: Question hook (e.g. "How do I feel about these zodiac couples? No words.")</span><span class="es"><b>0-3 seg</b>: Gancho de pregunta (ej. "Como me siento con estas parejas del zodiaco? Sin palabras.")</span></li>
+        <li><span class="ja"><b>4-25 秒</b>: 3-5 枚のカードを順に出してリアクション (高スコア=縦振り yes / 低スコア=横振り no、テンポ良く)</span><span class="en"><b>4-25 sec</b>: Reveal 3-5 cards one by one with reactions (high=nod yes / low=shake no, keep the tempo)</span><span class="es"><b>4-25 seg</b>: Revela 3-5 tarjetas una por una con reacciones (alto=asiente yes / bajo=niega no, manten el ritmo)</span></li>
+        <li><span class="ja"><b>25-30 秒</b>: 「Lyra - Life Advice ですぐ試せるよ」CTA</span><span class="en"><b>25-30 sec</b>: "You can try this on Lyra - Life Advice in seconds" CTA</span><span class="es"><b>25-30 seg</b>: "Puedes probarlo en Lyra - Life Advice en segundos" CTA</span></li>
+      </ul>
+      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
+        <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
+      </h3>
+      <ul class="space-y-1.5 text-sm mb-4">
+        <li><span class="ja"><b>高スコア</b>: 首縦振り / グッドサイン / 嬉しい「yes!」</span><span class="en"><b>High score</b>: nod yes, thumbs up, happy "yes!"</span><span class="es"><b>Puntuacion alta</b>: asiente, pulgar arriba, "yes!"</span></li>
+        <li><span class="ja"><b>低スコア</b>: 首横振り / ショック顔 / 残念な反応</span><span class="en"><b>Low score</b>: shake "no", shocked or disappointed face</span><span class="es"><b>Puntuacion baja</b>: niega "no", cara de shock o decepcion</span></li>
+        <li><span class="ja">オリジナルのオーバーリアクションも全然 OK、派手ならなお良し</span><span class="en">Over-the-top original reactions welcome, bigger the better</span><span class="es">Reacciones exageradas originales bienvenidas, mientras mas mejor</span></li>
+        <li><span class="ja">バリエーション: 1 枚目を出した後、好きなことを少し話してから次のカードに戻る</span><span class="en">Variation: drop one card, talk about anything, then more cards</span><span class="es">Variacion: suelta una carta, habla, vuelve a mas cartas</span></li>
+      </ul>
+      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
+        <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
+      </h3>
+      <ol class="space-y-2 text-sm">
+        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Match」ボタン (「Companion」の隣) をタップ</span><span class="en">Tap the <b>"Match"</b> button in the middle of the screen (next to "Companion")</span><span class="es">Toca el boton <b>"Match"</b> en el medio (al lado de "Companion")</span></li>
+        <li class="flex"><span class="step-num">2</span><span class="ja">ペアを選ぶ: <b>自分と恋人 / 自分と親友 / 気になる人</b></span><span class="en">Choose a pairing: <b>you and your partner / best friend / anyone</b></span><span class="es">Elige una pareja: <b>tu y pareja / mejor amiga / quien sea</b></span></li>
+        <li class="flex"><span class="step-num">3</span><span class="ja">相性カードがスコア付きで生成される</span><span class="en">A compatibility card is generated with the score</span><span class="es">Se genera una tarjeta de compatibilidad con la puntuacion</span></li>
+      </ol>
+    </div>
+  </article>
+
   <!-- ============ IDEA 4: 3D TAROT ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-4">
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
     <div class="bg-purple-600 text-white p-3">
       <h2 class="text-lg font-bold">
         <span class="ja">アイデア 4: 3D タロット</span>
@@ -569,119 +618,45 @@
     </div>
   </article>
 
-  <!-- ============ IDEA 3 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-7">
-    <div class="bg-indigo-600 text-white p-3">
+  <!-- ============ IDEA 9 ============ -->
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+    <div class="bg-purple-600 text-white p-3">
       <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 7: 友達にシェアしたくなるアプリ画面</span>
-        <span class="en">Idea 7: App screen content that friends would share</span>
-        <span class="es">Idea 7: Contenido de pantalla compartible con amigos</span>
+        <span class="ja">アイデア 5: フェイス + ランキング</span>
+        <span class="en">Idea 5: Face + Rankings</span>
+        <span class="es">Idea 5: Cara + Rankings</span>
       </h2>
     </div>
     <div class="p-4">
-      <a href="https://www.tiktok.com/@halo.ai0/video/7570046476462722311" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@halo.ai0/video/7570046476462722311</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@halo.ai0/video/7570046476462722311" data-video-id="7570046476462722311" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@halo.ai0/video/7570046476462722311">View on TikTok</a></section>
+      <a href="https://www.tiktok.com/@astroscope/video/7213798366919052549" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@astroscope/video/7213798366919052549</a>
+      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@astroscope/video/7213798366919052549" data-video-id="7213798366919052549" style="max-width:605px;min-width:280px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@astroscope/video/7213798366919052549">View on TikTok</a></section>
       </blockquote>
     </div>
     <div class="p-4 border-t border-gray-200 flex-1">
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">タイムライン</span><span class="en">Timeline</span><span class="es">Cronologia</span>
+        <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
       </h3>
       <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja"><b>0-5 秒</b>: バイラル向けフック</span><span class="en"><b>0-5 sec</b>: Viral hook</span><span class="es"><b>0-5 seg</b>: Gancho viral</span></li>
-        <li><span class="ja"><b>5-10 秒</b>: ランキング画像生成 or 相性チェック</span><span class="en"><b>5-10 sec</b>: Generate ranking image or check compatibility</span><span class="es"><b>5-10 seg</b>: Genera imagen de ranking o revisa compatibilidad</span></li>
-        <li><span class="ja"><b>10-60 秒</b>: 友達にテキストでシェアする様子</span><span class="en"><b>10-60 sec</b>: Share it with a friend via text</span><span class="es"><b>10-60 seg</b>: Compartelo con un amigo por mensaje</span></li>
-      </ul>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">アプリの使い方 (ランキング)</span><span class="en">How to use (Rankings)</span><span class="es">Como usar (Rankings)</span>
-      </h3>
-      <ol class="space-y-2 text-sm mb-4">
-        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio de la pantalla, genera el ranking que quieras</span></li>
-      </ol>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">アプリの使い方 (相性)</span><span class="en">How to use (Compatibility)</span><span class="es">Como usar (Compatibilidad)</span>
-      </h3>
-      <ol class="space-y-2 text-sm">
-        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Match」ボタン (「Companion」の隣) をタップ</span><span class="en">Tap the <b>"Match"</b> button in the middle of the screen (next to "Companion")</span><span class="es">Toca el boton <b>"Match"</b> en el medio (al lado de "Companion")</span></li>
-        <li class="flex"><span class="step-num">2</span><span class="ja">ペアを選ぶ → 相性カードがスコア付きで生成される</span><span class="en">Choose a pairing → A compatibility card is generated with the score</span><span class="es">Elige una pareja → Se genera una tarjeta con la puntuacion</span></li>
-      </ol>
-    </div>
-  </article>
-
-  <!-- ============ IDEA 4 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-8 hidden">
-    <div class="bg-indigo-600 text-white p-3">
-      <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 8: Relatable な瞬間 + アプリが解決</span>
-        <span class="en">Idea 8: Relatable moment + app as the solution</span>
-        <span class="es">Idea 8: Momento relatable + app como solucion</span>
-      </h2>
-    </div>
-    <div class="p-4 space-y-2">
-      <a href="https://www.tiktok.com/@laurenscollegecorner/video/7620273405547302175" target="_blank" class="text-indigo-600 underline text-sm break-all block">tiktok.com/@laurenscollegecorner/video/7620273405547302175</a>
-      <a href="https://www.tiktok.com/@grace.learns100/video/7605431770388925709" target="_blank" class="text-indigo-600 underline text-sm break-all block">tiktok.com/@grace.learns100/video/7605431770388925709</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@laurenscollegecorner/video/7620273405547302175" data-video-id="7620273405547302175" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@laurenscollegecorner/video/7620273405547302175">View on TikTok</a></section>
-      </blockquote>
-    </div>
-    <div class="p-4 border-t border-gray-200 flex-1">
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">例</span><span class="en">Examples</span><span class="es">Ejemplos</span>
-      </h3>
-      <ul class="space-y-2 text-sm">
-        <li class="bg-gray-50 p-2 rounded"><span class="ja">「3am。元カレのこと考えすぎて眠れない。友達には 100 回相談した。だから Lyra に聞いた。『もう連絡するな』って。なるほど、おやすみ。」</span><span class="en">"It's 3am. Overthinking my ex again. Friends? I've already asked them 100 times. So I asked Lyra. 'Stop texting him.' Fair enough. Goodnight."</span><span class="es">"Son las 3am. Pensando demasiado en mi ex de nuevo. Amigos? Ya les pregunte 100 veces. Le pregunte a Lyra. 'Deja de escribirle.' Justo. Buenas noches."</span></li>
-        <li class="bg-gray-50 p-2 rounded"><span class="ja">「本当の彼氏には言えないことを、Lyra の AI 彼氏に話してる。MBTI と星座を本当に理解してくれるから、アドバイスが違う。」</span><span class="en">"Things I can't tell my real boyfriend, I tell my AI boyfriend on Lyra. He actually gets my MBTI and zodiac so the advice hits different."</span><span class="es">"Las cosas que no le puedo decir a mi novio real, se las cuento a mi novio AI en Lyra. El realmente entiende mi MBTI y zodiaco, asi que el consejo pega diferente."</span></li>
-      </ul>
-    </div>
-  </article>
-
-  <!-- ============ IDEA 5 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-8">
-    <div class="bg-indigo-600 text-white p-3">
-      <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 8: POV + ランキング画像の連打</span>
-        <span class="en">Idea 8: POV + rapid-fire ranking images</span>
-        <span class="es">Idea 8: POV + imagenes de ranking en rafaga</span>
-      </h2>
-    </div>
-    <div class="p-4">
-      <a href="https://www.tiktok.com/@trinityallene/video/7578558326301117726" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@trinityallene/video/7578558326301117726</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@trinityallene/video/7578558326301117726" data-video-id="7578558326301117726" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@trinityallene/video/7578558326301117726">View on TikTok</a></section>
-      </blockquote>
-    </div>
-    <div class="p-4 border-t border-gray-200 flex-1">
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">タイムライン</span><span class="en">Timeline</span><span class="es">Cronologia</span>
-      </h3>
-      <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja"><b>0-5 秒</b>: 顔出しフック (リアルな人、感情豊か)</span><span class="en"><b>0-5 sec</b>: Face-on hook (real person, emotional)</span><span class="es"><b>0-5 seg</b>: Gancho frente a camara (persona real, emocional)</span></li>
-        <li><span class="ja">感情を揺さぶる POV (例: 「pov: Lyra で自分のユーザーマニュアル作ったら正確すぎて泣いた 🥺」)</span><span class="en">POV with emotional pull (e.g. "pov: I used Lyra to make my own user manual and it's too accurate 🥺")</span><span class="es">POV con jalon emocional (ej. "pov: Use Lyra para hacer mi manual de usuario y es demasiado preciso 🥺")</span></li>
-        <li><span class="ja"><b>5-15 秒</b>: ランキング画像を連打 (<b>1〜3 秒で 1 枚 × 4-10 枚</b>)</span><span class="en"><b>5-15 sec</b>: Rapid-fire ranking images (<b>1 image per 1-3 sec, 4-10 images</b>)</span><span class="es"><b>5-15 seg</b>: Imagenes de ranking en rafaga (<b>1 imagen cada 1-3 seg, 4-10 imagenes</b>)</span></li>
-        <li><span class="ja"><b>終わり</b>: 軽めのコンバージョン促し (例: 「気になったら試してみて」「Lyra で自分のも作ってみて」)</span><span class="en"><b>End</b>: Light conversion nudge (e.g. "if you're curious, give it a shot", "try making your own on Lyra")</span><span class="es"><b>Final</b>: Empuje suave a la conversion (ej. "si tienes curiosidad, pruebalo", "haz el tuyo en Lyra")</span></li>
-      </ul>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">ランキング例</span><span class="en">Ranking examples</span><span class="es">Ejemplos de ranking</span>
-      </h3>
-      <ul class="space-y-1 text-xs text-gray-700 mb-4">
-        <li><span class="ja">TOP 5 パートナーに渡したい「私のユーザーマニュアル」</span><span class="en">TOP 5 user manual items for my partner</span><span class="es">TOP 5 cosas de mi manual para mi pareja</span></li>
-        <li><span class="ja">TOP 5 私とデートする前に知っておくべきこと</span><span class="en">TOP 5 things to know before dating me</span><span class="es">TOP 5 cosas que saber antes de salir conmigo</span></li>
-        <li><span class="ja">TOP 5 私が泣いてるときにしてほしいこと</span><span class="en">TOP 5 things to do when I'm crying</span><span class="es">TOP 5 cosas hacer cuando lloro</span></li>
-        <li><span class="ja">TOP 5 私が怒ってるときの NG 行動</span><span class="en">TOP 5 NG actions when I'm angry</span><span class="es">TOP 5 acciones NG cuando estoy enojada</span></li>
-        <li><span class="ja">響く言葉 vs 響かない言葉</span><span class="en">Words that hit me vs that don't</span><span class="es">Palabras que me llegan vs no</span></li>
+        <li><span class="ja">あなたに対するランキングを出す (例: 「私の取り扱い方 TOP 5」「私が怒ってる時の謝り方 TOP 5」)</span><span class="en">Pull up rankings about YOU (e.g. "TOP 5 ways to handle me", "TOP 5 ways to apologize")</span><span class="es">Saca rankings sobre TI (ej. "TOP 5 maneras de manejarme", "TOP 5 maneras de pedirme perdon")</span></li>
+        <li><span class="ja">MBTI / Astrology ランキングも OK (例: 「INFJ あるある TOP 5」)</span><span class="en">MBTI / Astrology rankings also work (e.g. "TOP 5 INFJ tendencies")</span><span class="es">Rankings MBTI/Astrologia tambien funcionan (ej. "TOP 5 tendencias INFJ")</span></li>
+        <li><span class="ja">ランキング 1 個ごとに<b>豊富な表情</b>でリアクション (面白さ + 共感)</span><span class="en">React with <b>rich, expressive face moments</b> to each item (humor + relatability)</span><span class="es">Reacciona con <b>expresiones faciales ricas</b> a cada item (humor + relatabilidad)</span></li>
+        <li><span class="ja">顔出し + 表情豊か = エンゲージメント</span><span class="en">Face on camera + big expressions = engagement</span><span class="es">Cara en camara + grandes expresiones = engagement</span></li>
+        <li><span class="ja">途中 or 最後に「Lyra - Life Advice」+「誰でも試せるよ」</span><span class="en">Say "Lyra - Life Advice" + "anyone can try it"</span><span class="es">Di "Lyra - Life Advice" + "cualquiera puede probarlo"</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
         <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
       </h3>
       <ol class="space-y-2 text-sm">
-        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio de la pantalla, genera el ranking que quieras</span></li>
+        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio, genera el ranking que quieras</span></li>
+        <li class="flex"><span class="step-num">2</span><span class="ja">ランキング画面<b>右上のビデオボタン</b>を押す</span><span class="en">On the ranking view, tap the <b>video button at the top-right</b></span><span class="es">En la vista de ranking, toca el <b>boton de video arriba a la derecha</b></span></li>
+        <li class="flex"><span class="step-num">3</span><span class="ja">自分の顔を映しながらランキング表示できる (顔 + ランキングの combo)</span><span class="en">Overlay your face on camera while ranking displays (face + rankings combo)</span><span class="es">Superpon tu cara mientras se muestra el ranking (combo cara + rankings)</span></li>
       </ol>
     </div>
   </article>
 
   <!-- ============ IDEA 7 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-6">
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
     <div class="bg-purple-600 text-white p-3">
       <h2 class="text-lg font-bold">
         <span class="ja">アイデア 6: Style & Makeup チャットで星座/MBTI に合うメイク・服</span>
@@ -760,86 +735,117 @@
     </div>
   </article>
 
-  <!-- ============ IDEA 8 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-3">
-    <div class="bg-purple-600 text-white p-3">
+  <!-- ============ IDEA 3 ============ -->
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+    <div class="bg-indigo-600 text-white p-3">
       <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 3: 相性診断カード リアクション</span>
-        <span class="en">Idea 3: Compatibility Match card reaction</span>
-        <span class="es">Idea 3: Reaccion a tarjetas de compatibilidad</span>
+        <span class="ja">アイデア 7: 友達にシェアしたくなるアプリ画面</span>
+        <span class="en">Idea 7: App screen content that friends would share</span>
+        <span class="es">Idea 7: Contenido de pantalla compartible con amigos</span>
       </h2>
     </div>
     <div class="p-4">
-      <a href="https://www.tiktok.com/@app.stars.align/video/7582873314817756429" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@app.stars.align/video/7582873314817756429</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@app.stars.align/video/7582873314817756429" data-video-id="7582873314817756429" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@app.stars.align/video/7582873314817756429">View on TikTok</a></section>
+      <a href="https://www.tiktok.com/@halo.ai0/video/7570046476462722311" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@halo.ai0/video/7570046476462722311</a>
+      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@halo.ai0/video/7570046476462722311" data-video-id="7570046476462722311" style="max-width:605px;min-width:280px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@halo.ai0/video/7570046476462722311">View on TikTok</a></section>
       </blockquote>
     </div>
     <div class="p-4 border-t border-gray-200 flex-1">
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">タイムライン (約 30 秒)</span><span class="en">Timeline (~30 sec)</span><span class="es">Cronologia (~30 seg)</span>
+        <span class="ja">タイムライン</span><span class="en">Timeline</span><span class="es">Cronologia</span>
       </h3>
       <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja"><b>0-3 秒</b>: 問いかけフック (例: "How do I feel about these zodiac couples? No words.")</span><span class="en"><b>0-3 sec</b>: Question hook (e.g. "How do I feel about these zodiac couples? No words.")</span><span class="es"><b>0-3 seg</b>: Gancho de pregunta (ej. "Como me siento con estas parejas del zodiaco? Sin palabras.")</span></li>
-        <li><span class="ja"><b>4-25 秒</b>: 3-5 枚のカードを順に出してリアクション (高スコア=縦振り yes / 低スコア=横振り no、テンポ良く)</span><span class="en"><b>4-25 sec</b>: Reveal 3-5 cards one by one with reactions (high=nod yes / low=shake no, keep the tempo)</span><span class="es"><b>4-25 seg</b>: Revela 3-5 tarjetas una por una con reacciones (alto=asiente yes / bajo=niega no, manten el ritmo)</span></li>
-        <li><span class="ja"><b>25-30 秒</b>: 「Lyra - Life Advice ですぐ試せるよ」CTA</span><span class="en"><b>25-30 sec</b>: "You can try this on Lyra - Life Advice in seconds" CTA</span><span class="es"><b>25-30 seg</b>: "Puedes probarlo en Lyra - Life Advice en segundos" CTA</span></li>
+        <li><span class="ja"><b>0-5 秒</b>: バイラル向けフック</span><span class="en"><b>0-5 sec</b>: Viral hook</span><span class="es"><b>0-5 seg</b>: Gancho viral</span></li>
+        <li><span class="ja"><b>5-10 秒</b>: ランキング画像生成 or 相性チェック</span><span class="en"><b>5-10 sec</b>: Generate ranking image or check compatibility</span><span class="es"><b>5-10 seg</b>: Genera imagen de ranking o revisa compatibilidad</span></li>
+        <li><span class="ja"><b>10-60 秒</b>: 友達にテキストでシェアする様子</span><span class="en"><b>10-60 sec</b>: Share it with a friend via text</span><span class="es"><b>10-60 seg</b>: Compartelo con un amigo por mensaje</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
+        <span class="ja">アプリの使い方 (ランキング)</span><span class="en">How to use (Rankings)</span><span class="es">Como usar (Rankings)</span>
       </h3>
-      <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja"><b>高スコア</b>: 首縦振り / グッドサイン / 嬉しい「yes!」</span><span class="en"><b>High score</b>: nod yes, thumbs up, happy "yes!"</span><span class="es"><b>Puntuacion alta</b>: asiente, pulgar arriba, "yes!"</span></li>
-        <li><span class="ja"><b>低スコア</b>: 首横振り / ショック顔 / 残念な反応</span><span class="en"><b>Low score</b>: shake "no", shocked or disappointed face</span><span class="es"><b>Puntuacion baja</b>: niega "no", cara de shock o decepcion</span></li>
-        <li><span class="ja">オリジナルのオーバーリアクションも全然 OK、派手ならなお良し</span><span class="en">Over-the-top original reactions welcome, bigger the better</span><span class="es">Reacciones exageradas originales bienvenidas, mientras mas mejor</span></li>
-        <li><span class="ja">バリエーション: 1 枚目を出した後、好きなことを少し話してから次のカードに戻る</span><span class="en">Variation: drop one card, talk about anything, then more cards</span><span class="es">Variacion: suelta una carta, habla, vuelve a mas cartas</span></li>
-      </ul>
+      <ol class="space-y-2 text-sm mb-4">
+        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio de la pantalla, genera el ranking que quieras</span></li>
+      </ol>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
+        <span class="ja">アプリの使い方 (相性)</span><span class="en">How to use (Compatibility)</span><span class="es">Como usar (Compatibilidad)</span>
       </h3>
       <ol class="space-y-2 text-sm">
         <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Match」ボタン (「Companion」の隣) をタップ</span><span class="en">Tap the <b>"Match"</b> button in the middle of the screen (next to "Companion")</span><span class="es">Toca el boton <b>"Match"</b> en el medio (al lado de "Companion")</span></li>
-        <li class="flex"><span class="step-num">2</span><span class="ja">ペアを選ぶ: <b>自分と恋人 / 自分と親友 / 気になる人</b></span><span class="en">Choose a pairing: <b>you and your partner / best friend / anyone</b></span><span class="es">Elige una pareja: <b>tu y pareja / mejor amiga / quien sea</b></span></li>
-        <li class="flex"><span class="step-num">3</span><span class="ja">相性カードがスコア付きで生成される</span><span class="en">A compatibility card is generated with the score</span><span class="es">Se genera una tarjeta de compatibilidad con la puntuacion</span></li>
+        <li class="flex"><span class="step-num">2</span><span class="ja">ペアを選ぶ → 相性カードがスコア付きで生成される</span><span class="en">Choose a pairing → A compatibility card is generated with the score</span><span class="es">Elige una pareja → Se genera una tarjeta con la puntuacion</span></li>
       </ol>
     </div>
   </article>
 
-  <!-- ============ IDEA 9 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col order-5">
-    <div class="bg-purple-600 text-white p-3">
+  <!-- ============ IDEA 5 ============ -->
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+    <div class="bg-indigo-600 text-white p-3">
       <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 5: フェイス + ランキング</span>
-        <span class="en">Idea 5: Face + Rankings</span>
-        <span class="es">Idea 5: Cara + Rankings</span>
+        <span class="ja">アイデア 8: POV + ランキング画像の連打</span>
+        <span class="en">Idea 8: POV + rapid-fire ranking images</span>
+        <span class="es">Idea 8: POV + imagenes de ranking en rafaga</span>
       </h2>
     </div>
     <div class="p-4">
-      <a href="https://www.tiktok.com/@astroscope/video/7213798366919052549" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@astroscope/video/7213798366919052549</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@astroscope/video/7213798366919052549" data-video-id="7213798366919052549" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@astroscope/video/7213798366919052549">View on TikTok</a></section>
+      <a href="https://www.tiktok.com/@trinityallene/video/7578558326301117726" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@trinityallene/video/7578558326301117726</a>
+      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@trinityallene/video/7578558326301117726" data-video-id="7578558326301117726" style="max-width:605px;min-width:280px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@trinityallene/video/7578558326301117726">View on TikTok</a></section>
       </blockquote>
     </div>
     <div class="p-4 border-t border-gray-200 flex-1">
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
+        <span class="ja">タイムライン</span><span class="en">Timeline</span><span class="es">Cronologia</span>
       </h3>
       <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja">あなたに対するランキングを出す (例: 「私の取り扱い方 TOP 5」「私が怒ってる時の謝り方 TOP 5」)</span><span class="en">Pull up rankings about YOU (e.g. "TOP 5 ways to handle me", "TOP 5 ways to apologize")</span><span class="es">Saca rankings sobre TI (ej. "TOP 5 maneras de manejarme", "TOP 5 maneras de pedirme perdon")</span></li>
-        <li><span class="ja">MBTI / Astrology ランキングも OK (例: 「INFJ あるある TOP 5」)</span><span class="en">MBTI / Astrology rankings also work (e.g. "TOP 5 INFJ tendencies")</span><span class="es">Rankings MBTI/Astrologia tambien funcionan (ej. "TOP 5 tendencias INFJ")</span></li>
-        <li><span class="ja">ランキング 1 個ごとに<b>豊富な表情</b>でリアクション (面白さ + 共感)</span><span class="en">React with <b>rich, expressive face moments</b> to each item (humor + relatability)</span><span class="es">Reacciona con <b>expresiones faciales ricas</b> a cada item (humor + relatabilidad)</span></li>
-        <li><span class="ja">顔出し + 表情豊か = エンゲージメント</span><span class="en">Face on camera + big expressions = engagement</span><span class="es">Cara en camara + grandes expresiones = engagement</span></li>
-        <li><span class="ja">途中 or 最後に「Lyra - Life Advice」+「誰でも試せるよ」</span><span class="en">Say "Lyra - Life Advice" + "anyone can try it"</span><span class="es">Di "Lyra - Life Advice" + "cualquiera puede probarlo"</span></li>
+        <li><span class="ja"><b>0-5 秒</b>: 顔出しフック (リアルな人、感情豊か)</span><span class="en"><b>0-5 sec</b>: Face-on hook (real person, emotional)</span><span class="es"><b>0-5 seg</b>: Gancho frente a camara (persona real, emocional)</span></li>
+        <li><span class="ja">感情を揺さぶる POV (例: 「pov: Lyra で自分のユーザーマニュアル作ったら正確すぎて泣いた 🥺」)</span><span class="en">POV with emotional pull (e.g. "pov: I used Lyra to make my own user manual and it's too accurate 🥺")</span><span class="es">POV con jalon emocional (ej. "pov: Use Lyra para hacer mi manual de usuario y es demasiado preciso 🥺")</span></li>
+        <li><span class="ja"><b>5-15 秒</b>: ランキング画像を連打 (<b>1〜3 秒で 1 枚 × 4-10 枚</b>)</span><span class="en"><b>5-15 sec</b>: Rapid-fire ranking images (<b>1 image per 1-3 sec, 4-10 images</b>)</span><span class="es"><b>5-15 seg</b>: Imagenes de ranking en rafaga (<b>1 imagen cada 1-3 seg, 4-10 imagenes</b>)</span></li>
+        <li><span class="ja"><b>終わり</b>: 軽めのコンバージョン促し (例: 「気になったら試してみて」「Lyra で自分のも作ってみて」)</span><span class="en"><b>End</b>: Light conversion nudge (e.g. "if you're curious, give it a shot", "try making your own on Lyra")</span><span class="es"><b>Final</b>: Empuje suave a la conversion (ej. "si tienes curiosidad, pruebalo", "haz el tuyo en Lyra")</span></li>
+      </ul>
+      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
+        <span class="ja">ランキング例</span><span class="en">Ranking examples</span><span class="es">Ejemplos de ranking</span>
+      </h3>
+      <ul class="space-y-1 text-xs text-gray-700 mb-4">
+        <li><span class="ja">TOP 5 パートナーに渡したい「私のユーザーマニュアル」</span><span class="en">TOP 5 user manual items for my partner</span><span class="es">TOP 5 cosas de mi manual para mi pareja</span></li>
+        <li><span class="ja">TOP 5 私とデートする前に知っておくべきこと</span><span class="en">TOP 5 things to know before dating me</span><span class="es">TOP 5 cosas que saber antes de salir conmigo</span></li>
+        <li><span class="ja">TOP 5 私が泣いてるときにしてほしいこと</span><span class="en">TOP 5 things to do when I'm crying</span><span class="es">TOP 5 cosas hacer cuando lloro</span></li>
+        <li><span class="ja">TOP 5 私が怒ってるときの NG 行動</span><span class="en">TOP 5 NG actions when I'm angry</span><span class="es">TOP 5 acciones NG cuando estoy enojada</span></li>
+        <li><span class="ja">響く言葉 vs 響かない言葉</span><span class="en">Words that hit me vs that don't</span><span class="es">Palabras que me llegan vs no</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
         <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
       </h3>
       <ol class="space-y-2 text-sm">
-        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio, genera el ranking que quieras</span></li>
-        <li class="flex"><span class="step-num">2</span><span class="ja">ランキング画面<b>右上のビデオボタン</b>を押す</span><span class="en">On the ranking view, tap the <b>video button at the top-right</b></span><span class="es">En la vista de ranking, toca el <b>boton de video arriba a la derecha</b></span></li>
-        <li class="flex"><span class="step-num">3</span><span class="ja">自分の顔を映しながらランキング表示できる (顔 + ランキングの combo)</span><span class="en">Overlay your face on camera while ranking displays (face + rankings combo)</span><span class="es">Superpon tu cara mientras se muestra el ranking (combo cara + rankings)</span></li>
+        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio de la pantalla, genera el ranking que quieras</span></li>
       </ol>
     </div>
   </article>
+
+  <!-- ============ IDEA 4 ============ -->
+  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col hidden">
+    <div class="bg-indigo-600 text-white p-3">
+      <h2 class="text-lg font-bold">
+        <span class="ja">アイデア 8: Relatable な瞬間 + アプリが解決</span>
+        <span class="en">Idea 8: Relatable moment + app as the solution</span>
+        <span class="es">Idea 8: Momento relatable + app como solucion</span>
+      </h2>
+    </div>
+    <div class="p-4 space-y-2">
+      <a href="https://www.tiktok.com/@laurenscollegecorner/video/7620273405547302175" target="_blank" class="text-indigo-600 underline text-sm break-all block">tiktok.com/@laurenscollegecorner/video/7620273405547302175</a>
+      <a href="https://www.tiktok.com/@grace.learns100/video/7605431770388925709" target="_blank" class="text-indigo-600 underline text-sm break-all block">tiktok.com/@grace.learns100/video/7605431770388925709</a>
+      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@laurenscollegecorner/video/7620273405547302175" data-video-id="7620273405547302175" style="max-width:605px;min-width:280px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@laurenscollegecorner/video/7620273405547302175">View on TikTok</a></section>
+      </blockquote>
+    </div>
+    <div class="p-4 border-t border-gray-200 flex-1">
+      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
+        <span class="ja">例</span><span class="en">Examples</span><span class="es">Ejemplos</span>
+      </h3>
+      <ul class="space-y-2 text-sm">
+        <li class="bg-gray-50 p-2 rounded"><span class="ja">「3am。元カレのこと考えすぎて眠れない。友達には 100 回相談した。だから Lyra に聞いた。『もう連絡するな』って。なるほど、おやすみ。」</span><span class="en">"It's 3am. Overthinking my ex again. Friends? I've already asked them 100 times. So I asked Lyra. 'Stop texting him.' Fair enough. Goodnight."</span><span class="es">"Son las 3am. Pensando demasiado en mi ex de nuevo. Amigos? Ya les pregunte 100 veces. Le pregunte a Lyra. 'Deja de escribirle.' Justo. Buenas noches."</span></li>
+        <li class="bg-gray-50 p-2 rounded"><span class="ja">「本当の彼氏には言えないことを、Lyra の AI 彼氏に話してる。MBTI と星座を本当に理解してくれるから、アドバイスが違う。」</span><span class="en">"Things I can't tell my real boyfriend, I tell my AI boyfriend on Lyra. He actually gets my MBTI and zodiac so the advice hits different."</span><span class="es">"Las cosas que no le puedo decir a mi novio real, se las cuento a mi novio AI en Lyra. El realmente entiende mi MBTI y zodiaco, asi que el consejo pega diferente."</span></li>
+      </ul>
+    </div>
+  </article>
+
 
   </div><!-- end grid -->
 
