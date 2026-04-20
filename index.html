@@ -79,6 +79,13 @@
       zoom: 0.6;
       min-height: 350px !important;
     }
+    /* Disable touch on embed so horizontal carousel swipe works through it.
+       Thumbnail stays visible; users tap the URL link above to play. */
+    .tiktok-embed,
+    .tiktok-embed iframe,
+    iframe[src*="tiktok"] {
+      pointer-events: none !important;
+    }
     /* Card body truncation */
     .card-truncate {
       max-height: 240px;
