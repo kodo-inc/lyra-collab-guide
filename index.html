@@ -53,35 +53,23 @@
   }
   .more-btn { display: none; }
 
-  /* ========== Mobile-only accordion (<details> based) ========== */
+  /* ========== Accordion (<details> based, all screens) ========== */
   details.m-accordion > summary {
     list-style: none;
     cursor: pointer;
   }
   details.m-accordion > summary::-webkit-details-marker { display: none; }
-  @media (min-width: 768px) {
-    details.m-accordion > summary {
-      cursor: default;
-    }
+  details.m-accordion > summary::after {
+    content: "▶";
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 0.2s;
+    color: #9ca3af;
+    font-size: 0.7em;
+    vertical-align: middle;
   }
-  @media (max-width: 767px) {
-    details.m-accordion > summary {
-      position: relative;
-      padding-right: 22px;
-    }
-    details.m-accordion > summary::after {
-      content: "▶";
-      position: absolute;
-      right: 4px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: transform 0.2s;
-      color: #6b7280;
-      font-size: 0.75em;
-    }
-    details.m-accordion[open] > summary::after {
-      transform: translateY(-50%) rotate(90deg);
-    }
+  details.m-accordion[open] > summary::after {
+    transform: rotate(90deg);
   }
 
   /* ========== Mobile carousel (≤767px) ========== */
@@ -295,11 +283,11 @@
       <div class="flex items-start">
         <span class="flow-num">1</span>
         <div class="flex-1">
-          <details open class="m-accordion">
+          <details class="m-accordion">
             <summary class="font-bold mb-1 block">
-            <span class="ja">動画アイデアの提案</span>
-            <span class="en">Pitch your video idea</span>
-            <span class="es">Propon tu idea de video</span>
+            <span class="ja">動画作成前にテキストでコンセプトの合意</span>
+            <span class="en">Agree on the concept in text before filming</span>
+            <span class="es">Acordar el concepto por texto antes de filmar</span>
           </summary>
             <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1">
             <li><span class="ja">下記のアイデアからベースを選び、あなたのオーディエンス・特徴に合ったストーリーを提案</span><span class="en">Pick a base from the ideas below, pitch how to shape the story for YOUR audience</span><span class="es">Elige una idea base abajo, propon como adaptar la historia a TU audiencia</span></li>
@@ -312,7 +300,7 @@
       <div class="flex items-start">
         <span class="flow-num">2</span>
         <div class="flex-1">
-          <details open class="m-accordion">
+          <details class="m-accordion">
             <summary class="font-bold mb-1 block">
             <span class="ja">投稿前にドラフトレビュー</span>
             <span class="en">Draft review before posting</span>
@@ -330,7 +318,7 @@
       <div class="flex items-start">
         <span class="flow-num">3</span>
         <div class="flex-1">
-          <details open class="m-accordion">
+          <details class="m-accordion">
             <summary class="font-bold mb-1 block">
             <span class="ja">投稿してリンクをメール</span>
             <span class="en">Post and email the link</span>
@@ -346,7 +334,7 @@
       <div class="flex items-start">
         <span class="flow-num">4</span>
         <div class="flex-1">
-          <details open class="m-accordion">
+          <details class="m-accordion">
             <summary class="font-bold mb-1 block">
             <span class="ja">コメント返信 (48 時間以内)</span>
             <span class="en">Reply to comments (within 48 hours)</span>
@@ -363,7 +351,7 @@
       <div class="flex items-start">
         <span class="flow-num">5</span>
         <div class="flex-1">
-          <details open class="m-accordion">
+          <details class="m-accordion">
             <summary class="font-bold mb-1 block">
             <span class="ja">48 時間後集計 → 14 日以内に支払い</span>
             <span class="en">After 48h → tracking → payment within 14 days</span>
@@ -379,7 +367,7 @@
       <div class="flex items-start">
         <span class="flow-num">6</span>
         <div class="flex-1">
-          <details open class="m-accordion">
+          <details class="m-accordion">
             <summary class="font-bold mb-1 block">
             <span class="ja">継続判断</span>
             <span class="en">Future collaboration</span>
@@ -436,7 +424,7 @@
       <ul class="space-y-1.5 text-sm list-disc pl-5">
         <li><span class="ja">広告っぽさなし、あなたの素直な感想で 1 本のストーリー</span><span class="en">No ad vibes, one clear story in your honest voice</span><span class="es">Sin sensacion de anuncio, una historia clara en tu voz honesta</span></li>
         <li><span class="ja"><b>NG</b>: 「悩みを相談したら良いアドバイスをもらえたの！」みたいな表面的・ありきたりなチャット紹介は避ける</span><span class="en"><b>Avoid</b>: generic surface-level lines like "I asked Lyra about my problem and got great advice!"</span><span class="es"><b>Evitar</b>: lineas genericas superficiales como "Le pregunte a Lyra y me dio buen consejo!"</span></li>
-        <li><span class="ja">あなたしか聞かないような specific な質問・answer がベスト</span><span class="en">The most specific question + answer that only YOU would ask is best</span><span class="es">La pregunta + respuesta mas especifica que solo TU harias es lo mejor</span></li>
+        <li><span class="ja"><b>必須</b>: 「wow」「new」要素 (意外な事実 / 誰も見たことない視点) を含むこと。あなたしか聞かないような specific な質問・answer がベスト</span><span class="en"><b>Required</b>: include a "wow" or "new" element (a surprising fact / perspective nobody has seen). The most specific question + answer that only YOU would ask is best</span><span class="es"><b>Obligatorio</b>: incluye un elemento "wow" o "new" (un dato sorprendente / una perspectiva que nadie ha visto). La pregunta + respuesta mas especifica que solo TU harias es lo mejor</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2 mt-4">
         <span class="ja">アプリアイコン素材</span><span class="en">App icon assets</span><span class="es">Iconos de la app</span>
@@ -446,14 +434,15 @@
           <span class="ja">アプリアイコンはこちらから</span><span class="en">App icon images here</span><span class="es">Iconos de la app aqui</span>
         </a>
       </p>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2 mt-4">
-        <span class="ja">キャプション例</span><span class="en">Caption examples</span><span class="es">Ejemplos de caption</span>
-      </h3>
-      <ul class="space-y-1.5 text-xs text-gray-700 italic">
-        <li>"I asked Lyra why I keep falling for emotionally unavailable men. The answer made me sob 😭"</li>
-        <li>"My Lyra chat just diagnosed my entire childhood trauma in 4 sentences"</li>
-        <li>"I checked compatibility with my situationship... it's giving 'block him immediately'"</li>
-      </ul>
+      <details class="mt-4">
+        <summary class="font-bold text-sm uppercase tracking-wider text-gray-500 cursor-pointer hover:text-indigo-600 mb-2 select-none">
+          <span class="ja">他の例（タップで表示）</span><span class="en">More examples (tap to expand)</span><span class="es">Mas ejemplos (toca para ver)</span>
+        </summary>
+        <div class="mt-2 space-y-2">
+          <a href="https://vm.tiktok.com/ZTk2mDyky/" target="_blank" class="text-indigo-600 underline text-sm break-all block">https://vm.tiktok.com/ZTk2mDyky/</a>
+          <a href="https://vm.tiktok.com/ZTk2mrWNe/" target="_blank" class="text-indigo-600 underline text-sm break-all block">https://vm.tiktok.com/ZTk2mrWNe/</a>
+        </div>
+      </details>
       <details class="mt-4">
         <summary class="font-bold text-sm uppercase tracking-wider text-gray-500 cursor-pointer hover:text-indigo-600 mb-2 select-none">
           <span class="ja">ストーリー例（タップで表示）</span><span class="en">Story example (tap to expand)</span><span class="es">Ejemplo de historia (toca para ver)</span>
@@ -524,7 +513,7 @@
       <ul class="space-y-1.5 text-sm list-disc pl-5">
         <li><span class="ja">大切に思っているトピックの本音アドバイス + アプリは YOU が使うツールとして</span><span class="en">Genuine advice on a topic you care about + app appears as a tool YOU use</span><span class="es">Consejo genuino sobre un tema que te importa + la app aparece como herramienta que TU usas</span></li>
         <li><span class="ja"><b>NG</b>: 「悩みを相談したら良いアドバイスをもらえたの！」みたいな表面的・ありきたりなチャット紹介は避ける</span><span class="en"><b>Avoid</b>: generic surface-level lines like "I asked Lyra about my problem and got great advice!"</span><span class="es"><b>Evitar</b>: lineas genericas superficiales como "Le pregunte a Lyra y me dio buen consejo!"</span></li>
-        <li><span class="ja">あなたの specific な体験 + Lyra の specific な answer がベスト</span><span class="en">YOUR specific experience + Lyra's specific answer works best</span><span class="es">TU experiencia especifica + respuesta especifica de Lyra es lo mejor</span></li>
+        <li><span class="ja"><b>必須</b>: 「wow」「new」要素 (意外な事実 / 誰も見たことない視点) を含むこと。あなたの specific な体験 + Lyra の specific な answer がベスト</span><span class="en"><b>Required</b>: include a "wow" or "new" element (a surprising fact / perspective nobody has seen). YOUR specific experience + Lyra's specific answer works best</span><span class="es"><b>Obligatorio</b>: incluye un elemento "wow" o "new" (un dato sorprendente / una perspectiva que nadie ha visto). TU experiencia especifica + respuesta especifica de Lyra es lo mejor</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2 mt-4">
         <span class="ja">アプリアイコン素材</span><span class="en">App icon assets</span><span class="es">Iconos de la app</span>
@@ -534,14 +523,15 @@
           <span class="ja">アプリアイコンはこちらから</span><span class="en">App icon images here</span><span class="es">Iconos de la app aqui</span>
         </a>
       </p>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2 mt-4">
-        <span class="ja">キャプション例</span><span class="en">Caption examples</span><span class="es">Ejemplos de caption</span>
-      </h3>
-      <ul class="space-y-1.5 text-xs text-gray-700 italic">
-        <li>"Why I stopped giving my ex second chances (with help from Lyra)"</li>
-        <li>"The toxic dating pattern I didn't see until Lyra showed me my attachment style"</li>
-        <li>"Healing from a breakup as an INFJ. Lyra helped me name what I was feeling"</li>
-      </ul>
+      <details class="mt-4">
+        <summary class="font-bold text-sm uppercase tracking-wider text-gray-500 cursor-pointer hover:text-indigo-600 mb-2 select-none">
+          <span class="ja">他の例（タップで表示）</span><span class="en">More examples (tap to expand)</span><span class="es">Mas ejemplos (toca para ver)</span>
+        </summary>
+        <div class="mt-2 space-y-2">
+          <a href="https://vm.tiktok.com/ZTk2mDyky/" target="_blank" class="text-indigo-600 underline text-sm break-all block">https://vm.tiktok.com/ZTk2mDyky/</a>
+          <a href="https://vm.tiktok.com/ZTk2mrWNe/" target="_blank" class="text-indigo-600 underline text-sm break-all block">https://vm.tiktok.com/ZTk2mrWNe/</a>
+        </div>
+      </details>
       <details class="mt-4">
         <summary class="font-bold text-sm uppercase tracking-wider text-gray-500 cursor-pointer hover:text-indigo-600 mb-2 select-none">
           <span class="ja">ストーリー例（タップで表示）</span><span class="en">Story example (tap to expand)</span><span class="es">Ejemplo de historia (toca para ver)</span>
@@ -594,46 +584,92 @@
     </div>
   </article>
 
-  <!-- ============ IDEA 8 ============ -->
+  <!-- ============ IDEA 3: STYLE & MAKEUP (promoted) ============ -->
   <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
     <div class="bg-purple-600 text-white p-3">
       <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 3: 相性診断カード リアクション</span>
-        <span class="en">Idea 3: Compatibility Match card reaction</span>
-        <span class="es">Idea 3: Reaccion a tarjetas de compatibilidad</span>
+        <span class="ja">アイデア 3: Style & Makeup チャットで星座/MBTI に合うメイク・服</span>
+        <span class="en">Idea 3: Ask Style & Makeup chat about your chart/MBTI look</span>
+        <span class="es">Idea 3: Pregunta al chat Style & Makeup sobre tu look segun carta/MBTI</span>
       </h2>
     </div>
     <div class="p-4">
-      <a href="https://www.tiktok.com/@app.stars.align/video/7582873314817756429" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@app.stars.align/video/7582873314817756429</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@app.stars.align/video/7582873314817756429" data-video-id="7582873314817756429" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@app.stars.align/video/7582873314817756429">View on TikTok</a></section>
+      <a href="https://www.tiktok.com/@app.stars.align/video/7600493060224453918" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@app.stars.align/video/7600493060224453918</a>
+      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@app.stars.align/video/7600493060224453918" data-video-id="7600493060224453918" style="max-width:605px;min-width:280px;">
+        <section><a target="_blank" href="https://www.tiktok.com/@app.stars.align/video/7600493060224453918">View on TikTok</a></section>
       </blockquote>
     </div>
     <div class="p-4 border-t border-gray-200 flex-1">
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">タイムライン (約 30 秒)</span><span class="en">Timeline (~30 sec)</span><span class="es">Cronologia (~30 seg)</span>
+        <span class="ja">タイムライン (約 60-120 秒)</span><span class="en">Timeline (~60-120 sec)</span><span class="es">Cronologia (~60-120 seg)</span>
       </h3>
       <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja"><b>0-3 秒</b>: 問いかけフック (例: "How do I feel about these zodiac couples? No words.")</span><span class="en"><b>0-3 sec</b>: Question hook (e.g. "How do I feel about these zodiac couples? No words.")</span><span class="es"><b>0-3 seg</b>: Gancho de pregunta (ej. "Como me siento con estas parejas del zodiaco? Sin palabras.")</span></li>
-        <li><span class="ja"><b>4-25 秒</b>: 3-5 枚のカードを順に出してリアクション (高スコア=縦振り yes / 低スコア=横振り no、テンポ良く)</span><span class="en"><b>4-25 sec</b>: Reveal 3-5 cards one by one with reactions (high=nod yes / low=shake no, keep the tempo)</span><span class="es"><b>4-25 seg</b>: Revela 3-5 tarjetas una por una con reacciones (alto=asiente yes / bajo=niega no, manten el ritmo)</span></li>
+        <li><span class="ja"><b>0-5 秒</b>: 強フック (例: 「自分の金星星座を受け入れるほど魅力的になる」)</span><span class="en"><b>0-5 sec</b>: Strong hook (e.g. "the more you embrace your Venus sign, the more attractive you become")</span><span class="es"><b>0-5 seg</b>: Gancho fuerte (ej. "mientras mas aceptas tu signo de Venus, mas atractiva te vuelves")</span></li>
+        <li><span class="ja"><b>5-50 秒</b>: テーマ概論 + Style & Makeup チャットを開いて質問 + 自分の星座/MBTI の特徴を Lyra の提案ベースで語る (所々チャット画面差込)</span><span class="en"><b>5-50 sec</b>: Set up the theme + open the Style & Makeup chat with your question + talk about your sign/MBTI's vibe based on what Lyra suggested (sprinkle chat screens throughout)</span><span class="es"><b>5-50 seg</b>: Introduce el tema + abre el chat Style & Makeup con tu pregunta + habla sobre la vibra de tu signo/MBTI segun lo que Lyra sugirio (intercala pantallas de chat)</span></li>
+        <li><span class="ja"><b>50-90 秒</b>: スタイル / メイク / ヘアの具体推薦 (チャット画面さらに差込)</span><span class="en"><b>50-90 sec</b>: Specific style / makeup / hair recommendations (more chat screens)</span><span class="es"><b>50-90 seg</b>: Recomendaciones especificas de estilo / maquillaje / cabello (mas pantallas de chat)</span></li>
+        <li><span class="ja"><b>90-120 秒</b>: 内面の話 + 本音 + クロージング + アプリ名「Lyra - Life Advice」</span><span class="en"><b>90-120 sec</b>: Inner-side message + honest take + closing + app name "Lyra - Life Advice"</span><span class="es"><b>90-120 seg</b>: Mensaje del interior + opinion honesta + cierre + nombre "Lyra - Life Advice"</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
         <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
       </h3>
       <ul class="space-y-1.5 text-sm mb-4 list-disc pl-5">
-        <li><span class="ja"><b>高スコア</b>: 首縦振り / グッドサイン / 嬉しい「yes!」</span><span class="en"><b>High score</b>: nod yes, thumbs up, happy "yes!"</span><span class="es"><b>Puntuacion alta</b>: asiente, pulgar arriba, "yes!"</span></li>
-        <li><span class="ja"><b>低スコア</b>: 首横振り / ショック顔 / 残念な反応</span><span class="en"><b>Low score</b>: shake "no", shocked or disappointed face</span><span class="es"><b>Puntuacion baja</b>: niega "no", cara de shock o decepcion</span></li>
-        <li><span class="ja">オリジナルのオーバーリアクションも全然 OK、派手ならなお良し</span><span class="en">Over-the-top original reactions welcome, bigger the better</span><span class="es">Reacciones exageradas originales bienvenidas, mientras mas mejor</span></li>
-        <li><span class="ja">バリエーション: 1 枚目を出した後、好きなことを少し話してから次のカードに戻る</span><span class="en">Variation: drop one card, talk about anything, then more cards</span><span class="es">Variacion: suelta una carta, habla, vuelve a mas cartas</span></li>
+        <li><span class="ja">チャット画面を流れの中で自然に何度か差し込む (ズームしすぎない)</span><span class="en">Sprinkle chat screen moments throughout naturally (no heavy zoom)</span><span class="es">Salpica momentos de chat a lo largo del video (sin zoom intenso)</span></li>
+        <li><span class="ja"><b>本音で語る</b>: 何が役立った? 驚いた? おすすめしたい? 正直であるほど刺さる</span><span class="en"><b>Speak from the heart</b>: what worked? what surprised you? Honesty lands</span><span class="es"><b>Habla con el corazon</b>: que funciono? que te sorprendio? La honestidad pega</span></li>
+        <li><span class="ja">価値を感じなかったら紹介しないで OK、pass の方が better</span><span class="en">If no real value, don't promote it. Pass is better than fake</span><span class="es">Si no sentiste valor, no promociones. Pasar es mejor que fingir</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
         <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
       </h3>
       <ol class="space-y-2 text-sm">
-        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Match」ボタン (「Companion」の隣) をタップ</span><span class="en">Tap the <b>"Match"</b> button in the middle of the screen (next to "Companion")</span><span class="es">Toca el boton <b>"Match"</b> en el medio (al lado de "Companion")</span></li>
-        <li class="flex"><span class="step-num">2</span><span class="ja">ペアを選ぶ: <b>自分と恋人 / 自分と親友 / 気になる人</b></span><span class="en">Choose a pairing: <b>you and your partner / best friend / anyone</b></span><span class="es">Elige una pareja: <b>tu y pareja / mejor amiga / quien sea</b></span></li>
-        <li class="flex"><span class="step-num">3</span><span class="ja">相性カードがスコア付きで生成される</span><span class="en">A compatibility card is generated with the score</span><span class="es">Se genera una tarjeta de compatibilidad con la puntuacion</span></li>
+        <li class="flex"><span class="step-num">1</span><span class="ja">Lyra を開いて「Style & Makeup」チャットを選ぶ</span><span class="en">Open Lyra and choose the "Style & Makeup" chat</span><span class="es">Abre Lyra y elige el chat "Style & Makeup"</span></li>
+        <li class="flex"><span class="step-num">2</span><span class="ja">「ライジングサインに合うメイクは?」「INFJ の初デート服は?」など聞く</span><span class="en">Ask "what makeup fits my rising sign?" or "outfit for INFJ first date?"</span><span class="es">Pregunta "que maquillaje le va a mi ascendente?" o "outfit para INFJ primera cita?"</span></li>
+        <li class="flex"><span class="step-num">3</span><span class="ja">あなたのチャート/MBTI に基づく提案が返ってくる</span><span class="en">Get personalized suggestions based on your chart/MBTI</span><span class="es">Recibe sugerencias personalizadas basadas en tu carta/MBTI</span></li>
       </ol>
+      <details class="mt-4">
+        <summary class="font-bold text-sm uppercase tracking-wider text-gray-500 cursor-pointer hover:text-indigo-600 mb-2 select-none">
+          <span class="ja">他の例（タップで表示）</span><span class="en">More examples (tap to expand)</span><span class="es">Mas ejemplos (toca para ver)</span>
+        </summary>
+        <div class="mt-2 space-y-2">
+          <a href="https://www.tiktok.com/@angelinazhq/video/7574627112812842258" target="_blank" class="text-indigo-600 underline text-sm break-all block">tiktok.com/@angelinazhq/video/7574627112812842258</a>
+        </div>
+      </details>
+      <details class="mt-4">
+        <summary class="font-bold text-sm uppercase tracking-wider text-gray-500 cursor-pointer hover:text-indigo-600 mb-2 select-none">
+          <span class="ja">ストーリー例 Venus in Libra（タップで表示）</span><span class="en">Story example Venus in Libra (tap to expand)</span><span class="es">Ejemplo de historia Venus en Libra (toca para ver)</span>
+        </summary>
+        <div class="bg-gray-50 p-3 rounded text-xs text-gray-700 leading-relaxed mt-2">
+        <p class="ja">
+          自分の金星星座を受け入れれば受け入れるほど、あなたはどんどん魅力的になっていく。金星はまさに「引き寄せの法則」を司る存在。<br>
+          それぞれの金星星座に合わせたスタイルガイド、ルックブック、そして雰囲気を Lyra で作ったから、もう迷わなくていいよ。<br><br>
+          まずは天秤座。天秤座は金星に支配されているから、テーマは「バランス」と「フェミニンさ」。自分自身に対して気分が良ければ良いほど、より多くのものを引き寄せられる。<br><br>
+          お揃いのセットアップ、花柄、フェミニンなトップス、スカート、少し変わったカットのデザインの服がおすすめ。ピンクは特に似合う。ベビードールドレス、オフショルダーのトップスにジーンズ。とにかく自分が「セクシーだ」と感じるものを着て。<br><br>
+          ローライズもすごく似合う。少し肌を見せる、セクシー寄りのアイテムも◎。サンダルヒールはかなりいい。とにかく大事なのは、全体がバランスよくまとまっていること。アクセサリーは必須。バングルやピアスもつけて。<br><br>
+          メイクは、リップは軽めで、チークとブロンザーはしっかりめが好き。ヘイリー・ビーバーは金星天秤座で、彼女自身メイクブランドを持ってるけど、頬骨を強調するのが特徴的。リップもちゃんとやりつつ、「サイレンアイ」か「ドーアイ」どちらでも合うと思う。<br><br>
+          髪は、ロングの編み込み、ブロー、ヘッドバンド、ヘアアクセ。<br><br>
+          そして忘れないで。あなたは金星天秤座。内面を整えれば整えるほど、それは外側にも反映されていく。
+        </p>
+        <p class="en">
+          The more you embrace your Venus sign, the more attractive you become. Venus literally rules the law of attraction.<br>
+          I built a style guide, lookbook, and vibe for each Venus sign with Lyra, so you don't have to guess anymore.<br><br>
+          Let's start with Venus in Libra. Libra is ruled by Venus, so the theme is balance and femininity. The better you feel about yourself, the more you can attract.<br><br>
+          Matching sets, floral prints, feminine tops, skirts, slightly unusual cut designs are great. Pink especially suits you. Babydoll dresses, off-shoulder tops with jeans. Wear whatever makes YOU feel sexy.<br><br>
+          Low-rise also looks great on you. A little skin showing, slightly sexy pieces also work. Sandal heels are pretty great. The most important thing is overall balance. Accessories are a must. Bangles and earrings too.<br><br>
+          For makeup, light lips with strong blush and bronzer. Hailey Bieber is a Venus in Libra, and her makeup brand is all about emphasizing the cheekbones. Do the lips properly, and either "siren eye" or "doe eye" can work.<br><br>
+          For hair: long braids, blowouts, headbands, hair accessories.<br><br>
+          And don't forget. You are Venus in Libra. The more you take care of your inner world, the more it shows on the outside.
+        </p>
+        <p class="es">
+          Mientras mas aceptas tu signo de Venus, mas atractiva te vuelves. Venus literalmente rige la ley de atraccion.<br>
+          Hice una guia de estilo, lookbook y vibe para cada signo de Venus con Lyra, asi ya no tienes que adivinar.<br><br>
+          Empezamos con Venus en Libra. Libra esta regido por Venus, asi que el tema es equilibrio y feminidad. Cuanto mejor te sientas contigo misma, mas puedes atraer.<br><br>
+          Conjuntos coordinados, estampados florales, tops femeninos, faldas, disenos con cortes inusuales son geniales. El rosa te queda especialmente bien. Vestidos babydoll, tops off-shoulder con jeans. Usa lo que TE haga sentir sexy.<br><br>
+          Tiro bajo tambien te queda muy bien. Un poco de piel mostrada, piezas un poco sexy tambien funcionan. Las sandalias de tacon son bastante buenas. Lo mas importante es el equilibrio general. Los accesorios son indispensables. Pulseras y aretes tambien.<br><br>
+          Para maquillaje, labios suaves con rubor y bronzer fuertes. Hailey Bieber es Venus en Libra, y su marca de maquillaje destaca los pomulos. Haz los labios bien, y "siren eye" o "doe eye" puede funcionar.<br><br>
+          Para cabello: trenzas largas, blowouts, diademas, accesorios de cabello.<br><br>
+          Y no olvides. Eres Venus en Libra. Mientras mas cuides tu mundo interior, mas se reflejara afuera.
+        </p>
+      </div>
+      </details>
     </div>
   </article>
 
@@ -677,132 +713,13 @@
     </div>
   </article>
 
-  <!-- ============ IDEA 9 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-    <div class="bg-purple-600 text-white p-3">
-      <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 5: フェイス + ランキング</span>
-        <span class="en">Idea 5: Face + Rankings</span>
-        <span class="es">Idea 5: Cara + Rankings</span>
-      </h2>
-    </div>
-    <div class="p-4">
-      <a href="https://www.tiktok.com/@astroscope/video/7213798366919052549" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@astroscope/video/7213798366919052549</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@astroscope/video/7213798366919052549" data-video-id="7213798366919052549" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@astroscope/video/7213798366919052549">View on TikTok</a></section>
-      </blockquote>
-    </div>
-    <div class="p-4 border-t border-gray-200 flex-1">
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
-      </h3>
-      <ul class="space-y-1.5 text-sm mb-4 list-disc pl-5">
-        <li><span class="ja">あなたに対するランキングを出す (例: 「私の取り扱い方 TOP 5」「私が怒ってる時の謝り方 TOP 5」)</span><span class="en">Pull up rankings about YOU (e.g. "TOP 5 ways to handle me", "TOP 5 ways to apologize")</span><span class="es">Saca rankings sobre TI (ej. "TOP 5 maneras de manejarme", "TOP 5 maneras de pedirme perdon")</span></li>
-        <li><span class="ja">MBTI / Astrology ランキングも OK (例: 「INFJ あるある TOP 5」)</span><span class="en">MBTI / Astrology rankings also work (e.g. "TOP 5 INFJ tendencies")</span><span class="es">Rankings MBTI/Astrologia tambien funcionan (ej. "TOP 5 tendencias INFJ")</span></li>
-        <li><span class="ja">ランキング 1 個ごとに<b>豊富な表情</b>でリアクション (面白さ + 共感)</span><span class="en">React with <b>rich, expressive face moments</b> to each item (humor + relatability)</span><span class="es">Reacciona con <b>expresiones faciales ricas</b> a cada item (humor + relatabilidad)</span></li>
-        <li><span class="ja">顔出し + 表情豊か = エンゲージメント</span><span class="en">Face on camera + big expressions = engagement</span><span class="es">Cara en camara + grandes expresiones = engagement</span></li>
-        <li><span class="ja">途中 or 最後にアプリ名「Lyra - Life Advice」を<b>口に出す / テキストで表示 / 画像で出す</b> のいずれかで入れる</span><span class="en">Mid or end: include the app name "Lyra - Life Advice" by <b>saying it / showing as text / showing as image</b> (any one works)</span><span class="es">A la mitad o al final: incluye el nombre "Lyra - Life Advice" <b>diciendolo / como texto / como imagen</b> (cualquier opcion funciona)</span></li>
-      </ul>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
-      </h3>
-      <ol class="space-y-2 text-sm">
-        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio, genera el ranking que quieras</span></li>
-        <li class="flex"><span class="step-num">2</span><span class="ja">ランキング画面<b>右上のビデオボタン</b>を押す</span><span class="en">On the ranking view, tap the <b>video button at the top-right</b></span><span class="es">En la vista de ranking, toca el <b>boton de video arriba a la derecha</b></span></li>
-        <li class="flex"><span class="step-num">3</span><span class="ja">自分の顔を映しながらランキング表示できる (顔 + ランキングの combo)</span><span class="en">Overlay your face on camera while ranking displays (face + rankings combo)</span><span class="es">Superpon tu cara mientras se muestra el ranking (combo cara + rankings)</span></li>
-      </ol>
-    </div>
-  </article>
-
-  <!-- ============ IDEA 7 ============ -->
-  <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-    <div class="bg-purple-600 text-white p-3">
-      <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 6: Style & Makeup チャットで星座/MBTI に合うメイク・服</span>
-        <span class="en">Idea 6: Ask Style & Makeup chat about your chart/MBTI look</span>
-        <span class="es">Idea 6: Pregunta al chat Style & Makeup sobre tu look segun carta/MBTI</span>
-      </h2>
-    </div>
-    <div class="p-4 space-y-2">
-      <a href="https://www.tiktok.com/@app.stars.align/video/7600493060224453918" target="_blank" class="text-indigo-600 underline text-sm break-all block">tiktok.com/@app.stars.align/video/7600493060224453918</a>
-      <a href="https://www.tiktok.com/@angelinazhq/video/7574627112812842258" target="_blank" class="text-indigo-600 underline text-sm break-all block">tiktok.com/@angelinazhq/video/7574627112812842258</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@app.stars.align/video/7600493060224453918" data-video-id="7600493060224453918" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@app.stars.align/video/7600493060224453918">View on TikTok</a></section>
-      </blockquote>
-    </div>
-    <div class="p-4 border-t border-gray-200 flex-1">
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">タイムライン (約 60-120 秒)</span><span class="en">Timeline (~60-120 sec)</span><span class="es">Cronologia (~60-120 seg)</span>
-      </h3>
-      <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja"><b>0-5 秒</b>: 強フック (例: 「自分の金星星座を受け入れるほど魅力的になる」)</span><span class="en"><b>0-5 sec</b>: Strong hook (e.g. "the more you embrace your Venus sign, the more attractive you become")</span><span class="es"><b>0-5 seg</b>: Gancho fuerte (ej. "mientras mas aceptas tu signo de Venus, mas atractiva te vuelves")</span></li>
-        <li><span class="ja"><b>5-50 秒</b>: テーマ概論 + Style & Makeup チャットを開いて質問 + 自分の星座/MBTI の特徴を Lyra の提案ベースで語る (所々チャット画面差込)</span><span class="en"><b>5-50 sec</b>: Set up the theme + open the Style & Makeup chat with your question + talk about your sign/MBTI's vibe based on what Lyra suggested (sprinkle chat screens throughout)</span><span class="es"><b>5-50 seg</b>: Introduce el tema + abre el chat Style & Makeup con tu pregunta + habla sobre la vibra de tu signo/MBTI segun lo que Lyra sugirio (intercala pantallas de chat)</span></li>
-        <li><span class="ja"><b>50-90 秒</b>: スタイル / メイク / ヘアの具体推薦 (チャット画面さらに差込)</span><span class="en"><b>50-90 sec</b>: Specific style / makeup / hair recommendations (more chat screens)</span><span class="es"><b>50-90 seg</b>: Recomendaciones especificas de estilo / maquillaje / cabello (mas pantallas de chat)</span></li>
-        <li><span class="ja"><b>90-120 秒</b>: 内面の話 + 本音 + クロージング + アプリ名「Lyra - Life Advice」</span><span class="en"><b>90-120 sec</b>: Inner-side message + honest take + closing + app name "Lyra - Life Advice"</span><span class="es"><b>90-120 seg</b>: Mensaje del interior + opinion honesta + cierre + nombre "Lyra - Life Advice"</span></li>
-      </ul>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
-      </h3>
-      <ul class="space-y-1.5 text-sm mb-4 list-disc pl-5">
-        <li><span class="ja">チャット画面を流れの中で自然に何度か差し込む (ズームしすぎない)</span><span class="en">Sprinkle chat screen moments throughout naturally (no heavy zoom)</span><span class="es">Salpica momentos de chat a lo largo del video (sin zoom intenso)</span></li>
-        <li><span class="ja"><b>本音で語る</b>: 何が役立った? 驚いた? おすすめしたい? 正直であるほど刺さる</span><span class="en"><b>Speak from the heart</b>: what worked? what surprised you? Honesty lands</span><span class="es"><b>Habla con el corazon</b>: que funciono? que te sorprendio? La honestidad pega</span></li>
-        <li><span class="ja">価値を感じなかったら紹介しないで OK、pass の方が better</span><span class="en">If no real value, don't promote it. Pass is better than fake</span><span class="es">Si no sentiste valor, no promociones. Pasar es mejor que fingir</span></li>
-      </ul>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
-      </h3>
-      <ol class="space-y-2 text-sm">
-        <li class="flex"><span class="step-num">1</span><span class="ja">Lyra を開いて「Style & Makeup」チャットを選ぶ</span><span class="en">Open Lyra and choose the "Style & Makeup" chat</span><span class="es">Abre Lyra y elige el chat "Style & Makeup"</span></li>
-        <li class="flex"><span class="step-num">2</span><span class="ja">「ライジングサインに合うメイクは?」「INFJ の初デート服は?」など聞く</span><span class="en">Ask "what makeup fits my rising sign?" or "outfit for INFJ first date?"</span><span class="es">Pregunta "que maquillaje le va a mi ascendente?" o "outfit para INFJ primera cita?"</span></li>
-        <li class="flex"><span class="step-num">3</span><span class="ja">あなたのチャート/MBTI に基づく提案が返ってくる</span><span class="en">Get personalized suggestions based on your chart/MBTI</span><span class="es">Recibe sugerencias personalizadas basadas en tu carta/MBTI</span></li>
-      </ol>
-      <details class="mt-4">
-        <summary class="font-bold text-sm uppercase tracking-wider text-gray-500 cursor-pointer hover:text-indigo-600 mb-2 select-none">
-          <span class="ja">ストーリー例 Venus in Libra（タップで表示）</span><span class="en">Story example Venus in Libra (tap to expand)</span><span class="es">Ejemplo de historia Venus en Libra (toca para ver)</span>
-        </summary>
-        <div class="bg-gray-50 p-3 rounded text-xs text-gray-700 leading-relaxed mt-2">
-        <p class="ja">
-          自分の金星星座を受け入れれば受け入れるほど、あなたはどんどん魅力的になっていく。金星はまさに「引き寄せの法則」を司る存在。<br>
-          それぞれの金星星座に合わせたスタイルガイド、ルックブック、そして雰囲気を Lyra で作ったから、もう迷わなくていいよ。<br><br>
-          まずは天秤座。天秤座は金星に支配されているから、テーマは「バランス」と「フェミニンさ」。自分自身に対して気分が良ければ良いほど、より多くのものを引き寄せられる。<br><br>
-          お揃いのセットアップ、花柄、フェミニンなトップス、スカート、少し変わったカットのデザインの服がおすすめ。ピンクは特に似合う。ベビードールドレス、オフショルダーのトップスにジーンズ。とにかく自分が「セクシーだ」と感じるものを着て。<br><br>
-          ローライズもすごく似合う。少し肌を見せる、セクシー寄りのアイテムも◎。サンダルヒールはかなりいい。とにかく大事なのは、全体がバランスよくまとまっていること。アクセサリーは必須。バングルやピアスもつけて。<br><br>
-          メイクは、リップは軽めで、チークとブロンザーはしっかりめが好き。ヘイリー・ビーバーは金星天秤座で、彼女自身メイクブランドを持ってるけど、頬骨を強調するのが特徴的。リップもちゃんとやりつつ、「サイレンアイ」か「ドーアイ」どちらでも合うと思う。<br><br>
-          髪は、ロングの編み込み、ブロー、ヘッドバンド、ヘアアクセ。<br><br>
-          そして忘れないで。あなたは金星天秤座。内面を整えれば整えるほど、それは外側にも反映されていく。
-        </p>
-        <p class="en">
-          The more you embrace your Venus sign, the more attractive you become. Venus literally rules the law of attraction.<br>
-          I built a style guide, lookbook, and vibe for each Venus sign with Lyra, so you don't have to guess anymore.<br><br>
-          Let's start with Venus in Libra. Libra is ruled by Venus, so the theme is balance and femininity. The better you feel about yourself, the more you can attract.<br><br>
-          Matching sets, floral prints, feminine tops, skirts, slightly unusual cut designs are great. Pink especially suits you. Babydoll dresses, off-shoulder tops with jeans. Wear whatever makes YOU feel sexy.<br><br>
-          Low-rise also looks great on you. A little skin showing, slightly sexy pieces also work. Sandal heels are pretty great. The most important thing is overall balance. Accessories are a must. Bangles and earrings too.<br><br>
-          For makeup, light lips with strong blush and bronzer. Hailey Bieber is a Venus in Libra, and her makeup brand is all about emphasizing the cheekbones. Do the lips properly, and either "siren eye" or "doe eye" can work.<br><br>
-          For hair: long braids, blowouts, headbands, hair accessories.<br><br>
-          And don't forget. You are Venus in Libra. The more you take care of your inner world, the more it shows on the outside.
-        </p>
-        <p class="es">
-          Mientras mas aceptas tu signo de Venus, mas atractiva te vuelves. Venus literalmente rige la ley de atraccion.<br>
-          Hice una guia de estilo, lookbook y vibe para cada signo de Venus con Lyra, asi ya no tienes que adivinar.<br><br>
-          Empezamos con Venus en Libra. Libra esta regido por Venus, asi que el tema es equilibrio y feminidad. Cuanto mejor te sientas contigo misma, mas puedes atraer.<br><br>
-          Conjuntos coordinados, estampados florales, tops femeninos, faldas, disenos con cortes inusuales son geniales. El rosa te queda especialmente bien. Vestidos babydoll, tops off-shoulder con jeans. Usa lo que TE haga sentir sexy.<br><br>
-          Tiro bajo tambien te queda muy bien. Un poco de piel mostrada, piezas un poco sexy tambien funcionan. Las sandalias de tacon son bastante buenas. Lo mas importante es el equilibrio general. Los accesorios son indispensables. Pulseras y aretes tambien.<br><br>
-          Para maquillaje, labios suaves con rubor y bronzer fuertes. Hailey Bieber es Venus en Libra, y su marca de maquillaje destaca los pomulos. Haz los labios bien, y "siren eye" o "doe eye" puede funcionar.<br><br>
-          Para cabello: trenzas largas, blowouts, diademas, accesorios de cabello.<br><br>
-          Y no olvides. Eres Venus en Libra. Mientras mas cuides tu mundo interior, mas se reflejara afuera.
-        </p>
-      </div>
-      </details>
-    </div>
-  </article>
-
   <!-- ============ IDEA 3 ============ -->
   <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
     <div class="bg-indigo-600 text-white p-3">
       <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 7: 友達にシェアしたくなるアプリ画面</span>
-        <span class="en">Idea 7: App screen content that friends would share</span>
-        <span class="es">Idea 7: Contenido de pantalla compartible con amigos</span>
+        <span class="ja">アイデア 5: 友達にシェアしたくなるアプリ画面</span>
+        <span class="en">Idea 5: App screen content that friends would share</span>
+        <span class="es">Idea 5: Contenido de pantalla compartible con amigos</span>
       </h2>
     </div>
     <div class="p-4">
@@ -836,47 +753,37 @@
     </div>
   </article>
 
-  <!-- ============ IDEA 5 ============ -->
+  <!-- ============ IDEA 6: OPEN CALL FOR YOUR IDEA ============ -->
   <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-    <div class="bg-indigo-600 text-white p-3">
+    <div class="bg-pink-600 text-white p-3">
       <h2 class="text-lg font-bold">
-        <span class="ja">アイデア 8: POV + ランキング画像の連打</span>
-        <span class="en">Idea 8: POV + rapid-fire ranking images</span>
-        <span class="es">Idea 8: POV + imagenes de ranking en rafaga</span>
+        <span class="ja">アイデア 6: あなたの提案待ってます！</span>
+        <span class="en">Idea 6: We'd love to hear YOUR idea!</span>
+        <span class="es">Idea 6: Esperamos TU propia idea!</span>
       </h2>
     </div>
-    <div class="p-4">
-      <a href="https://www.tiktok.com/@trinityallene/video/7578558326301117726" target="_blank" class="text-indigo-600 underline text-sm break-all">tiktok.com/@trinityallene/video/7578558326301117726</a>
-      <blockquote class="tiktok-embed mt-3" cite="https://www.tiktok.com/@trinityallene/video/7578558326301117726" data-video-id="7578558326301117726" style="max-width:605px;min-width:280px;">
-        <section><a target="_blank" href="https://www.tiktok.com/@trinityallene/video/7578558326301117726">View on TikTok</a></section>
-      </blockquote>
-    </div>
     <div class="p-4 border-t border-gray-200 flex-1">
+      <p class="text-sm mb-4">
+        <span class="ja">上の 5 つにピンとこなかったら、あなた独自のアイデアをぜひ提案してください！ あなたのオーディエンスをいちばん理解しているのはあなた自身です。</span>
+        <span class="en">If none of the 5 ideas above feel right, please propose your own! You know your audience best.</span>
+        <span class="es">Si ninguna de las 5 ideas te convence, proponnos la tuya! Tu conoces mejor a tu audiencia.</span>
+      </p>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">タイムライン</span><span class="en">Timeline</span><span class="es">Cronologia</span>
+        <span class="ja">提案するときにお願いしたいこと</span><span class="en">When you propose, please include</span><span class="es">Cuando propongas, incluye</span>
       </h3>
-      <ul class="space-y-1.5 text-sm mb-4">
-        <li><span class="ja"><b>0-5 秒</b>: 顔出しフック (リアルな人、感情豊か)</span><span class="en"><b>0-5 sec</b>: Face-on hook (real person, emotional)</span><span class="es"><b>0-5 seg</b>: Gancho frente a camara (persona real, emocional)</span></li>
-        <li><span class="ja">感情を揺さぶる POV (例: 「pov: Lyra で自分のユーザーマニュアル作ったら正確すぎて泣いた 🥺」)</span><span class="en">POV with emotional pull (e.g. "pov: I used Lyra to make my own user manual and it's too accurate 🥺")</span><span class="es">POV con jalon emocional (ej. "pov: Use Lyra para hacer mi manual de usuario y es demasiado preciso 🥺")</span></li>
-        <li><span class="ja"><b>5-15 秒</b>: ランキング画像を連打 (<b>1〜3 秒で 1 枚 × 4-10 枚</b>)</span><span class="en"><b>5-15 sec</b>: Rapid-fire ranking images (<b>1 image per 1-3 sec, 4-10 images</b>)</span><span class="es"><b>5-15 seg</b>: Imagenes de ranking en rafaga (<b>1 imagen cada 1-3 seg, 4-10 imagenes</b>)</span></li>
-        <li><span class="ja"><b>終わり</b>: アプリ名「Lyra - Life Advice」を<b>口に出す / テキストで表示 / 画像で出す</b> のいずれかで入れる</span><span class="en"><b>End</b>: include the app name "Lyra - Life Advice" by <b>saying it / showing as text / showing as image</b> (any one works)</span><span class="es"><b>Final</b>: incluye el nombre "Lyra - Life Advice" <b>diciendolo / como texto / como imagen</b> (cualquier opcion funciona)</span></li>
+      <ul class="space-y-1.5 text-sm list-disc pl-5 mb-4">
+        <li><span class="ja"><b>ベンチマーク動画の URL</b>: 「こういう雰囲気・構成でいきたい」と伝わる参考 TikTok / Reels</span><span class="en"><b>A benchmark video URL</b>: a reference TikTok / Reel that shows the vibe and structure you want</span><span class="es"><b>Un URL de video de referencia</b>: un TikTok / Reel que muestre la vibra y estructura que quieres</span></li>
+        <li><span class="ja">ざっくりの構成 (何秒目で何を見せる、どこでアプリが出てくる等)</span><span class="en">A rough outline (what happens at each moment, when the app appears, etc.)</span><span class="es">Un bosquejo aproximado (que pasa en cada momento, cuando aparece la app, etc.)</span></li>
+        <li><span class="ja">なぜそのアイデアがあなたのオーディエンスに刺さりそうか</span><span class="en">Why you think it'll resonate with your audience</span><span class="es">Por que crees que va a resonar con tu audiencia</span></li>
       </ul>
       <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">ランキング例</span><span class="en">Ranking examples</span><span class="es">Ejemplos de ranking</span>
+        <span class="ja">ポイント</span><span class="en">Key points</span><span class="es">Puntos clave</span>
       </h3>
-      <ul class="space-y-1 text-xs text-gray-700 mb-4">
-        <li><span class="ja">TOP 5 パートナーに渡したい「私のユーザーマニュアル」</span><span class="en">TOP 5 user manual items for my partner</span><span class="es">TOP 5 cosas de mi manual para mi pareja</span></li>
-        <li><span class="ja">TOP 5 私とデートする前に知っておくべきこと</span><span class="en">TOP 5 things to know before dating me</span><span class="es">TOP 5 cosas que saber antes de salir conmigo</span></li>
-        <li><span class="ja">TOP 5 私が泣いてるときにしてほしいこと</span><span class="en">TOP 5 things to do when I'm crying</span><span class="es">TOP 5 cosas hacer cuando lloro</span></li>
-        <li><span class="ja">TOP 5 私が怒ってるときの NG 行動</span><span class="en">TOP 5 NG actions when I'm angry</span><span class="es">TOP 5 acciones NG cuando estoy enojada</span></li>
-        <li><span class="ja">響く言葉 vs 響かない言葉</span><span class="en">Words that hit me vs that don't</span><span class="es">Palabras que me llegan vs no</span></li>
+      <ul class="space-y-1.5 text-sm list-disc pl-5">
+        <li><span class="ja">1 本のストーリーになっていること (機能の羅列は NG)</span><span class="en">Must be ONE single story (no feature walkthrough)</span><span class="es">Debe ser UNA sola historia (sin recorrido de funciones)</span></li>
+        <li><span class="ja"><b>必須</b>: 「wow」「new」要素 (意外な事実 / 誰も見たことない視点) を含むこと</span><span class="en"><b>Required</b>: include a "wow" or "new" element (a surprising fact / perspective nobody has seen)</span><span class="es"><b>Obligatorio</b>: incluye un elemento "wow" o "new" (un dato sorprendente / una perspectiva que nadie ha visto)</span></li>
+        <li><span class="ja">広告感のない、あなたらしいトーン</span><span class="en">No ad vibes, keep it in YOUR voice</span><span class="es">Sin sensacion de anuncio, manten TU voz</span></li>
       </ul>
-      <h3 class="font-bold text-sm uppercase tracking-wider text-gray-500 mb-2">
-        <span class="ja">アプリの使い方</span><span class="en">How to use in the app</span><span class="es">Como usar en la app</span>
-      </h3>
-      <ol class="space-y-2 text-sm">
-        <li class="flex"><span class="step-num">1</span><span class="ja">アプリ画面<b>中部</b>「Rankings」から好きなランキングを生成</span><span class="en">Tap <b>"Rankings"</b> in the middle of the screen, generate any ranking</span><span class="es">Toca <b>"Rankings"</b> en el medio de la pantalla, genera el ranking que quieras</span></li>
-      </ol>
     </div>
   </article>
 
